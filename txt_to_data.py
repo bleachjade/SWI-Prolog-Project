@@ -1,8 +1,17 @@
 def unique_artists():
     with open("unique_artists.txt", encoding="utf8") as f:
         for i in f:
+            listword = []
             word = i.split("<SEP>")
-            print(word[3])
+            # print(f"artist({word[3]}).")
+            for a in word[3]:
+                if a == " ":
+                    a = "-"
+                listword.append(a)
+            
+            new_word = "".join(listword)
+            print(f"artist({new_word.lower()}).")
+            listword.clear()
 
 def artists_location():
     with open("artists_location.txt", encoding="utf8") as f:
@@ -16,6 +25,6 @@ def genre():
         for i in f:
             print(i)
 
-# unique_artists()
+unique_artists()
 # artists_location()
 # genre()
