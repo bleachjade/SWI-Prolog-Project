@@ -7,6 +7,8 @@ def unique_artists():
             for a in word[3]:
                 if a == " ":
                     a = "-"
+                if a == "\n":
+                    a = ""
                 listword.append(a)
             
             new_word = "".join(listword)
